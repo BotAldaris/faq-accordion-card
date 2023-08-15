@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Frontend Mentor | FAQ Accordion Card</title>
+  </head>
+  <body>
+    <main class="conteiner">
+      <div class="illustration"></div>
+
+      <div class="faq-section">
+        <h1 class="faq-section__heading">
+          <abbr
+            class="faq-section__heading__name"
+            title="Frequently Asked Questions"
+            aria-label="Frequently Asked Questions"
+            >FAQ</abbr
+          >
+        </h1>
+
+        <details class="faq-block">
+          <summary class="question">
+            How many team members can I invite?
+          </summary>
+
+          <p class="answer">
+            You can invite up to 2 additional users on the Free plan. There is
+            no limit on team members for the Premium plan.
+          </p>
+        </details>
+
+        <details class="faq-block">
+          <summary class="question">
+            What is the maximum file upload size?
+          </summary>
+
+          <p class="answer">
+            No more than 2GB. All files in your account must fit your allotted
+            storage space.
+          </p>
+        </details>
+
+        <details class="faq-block">
+          <summary class="question">How do I reset my password?</summary>
+
+          <p class="answer">
+            Click “Forgot password” from the login page or “Change password”
+            from your profile page.
+          </p>
+        </details>
+
+        <details class="faq-block">
+          <summary class="question">Can I cancel my subscription?</summary>
+
+          <p class="answer">
+            Yes! Send us a message and we’ll process your request no questions
+            asked.
+          </p>
+        </details>
+
+        <details class="faq-block">
+          <summary class="question">Do you provide additional support?</summary>
+
+          <p class="answer">
+            Chat and email support is available 24/7. Phone lines are open
+            during normal business hours.
+          </p>
+        </details>
+      </div>
+    </main>
+    <footer class="attribution">
+      Challenge by
+      <a
+        href="https://www.frontendmentor.io?ref=challenge"
+        target="_blank"
+        rel="noopener"
+        >Frontend Mentor</a
+      >. Coded by
+      <a href="https://github.com/BotAldaris" target="_blank" rel="noopener"
+        >Gabriel Lima da Silva</a
+      >.
+    </footer>
+    <script defer>
+      const dropDownElements = document.querySelectorAll(".question");
+
+      dropDownElements.forEach((dropDown) => {
+        dropDown.addEventListener("click", (e) => {
+          if (e.target.parentElement.open == true)
+            return (e.target.parentElement = false);
+          dropDownElements.forEach(
+            (element) => (element.parentElement.open = false)
+          );
+
+          e.target.parentElement.open = false;
+        });
+      });
+    </script>
+  </body>
+</html>
